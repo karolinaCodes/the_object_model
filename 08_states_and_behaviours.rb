@@ -52,3 +52,4 @@ my_car.shut_car_off
 puts my_car.get_current_speed
 
 my_car.spray_paint "orange"
+

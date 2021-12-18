@@ -42,7 +42,7 @@ class Car
   end
 
   def to_s
-    puts "Your car is a #{self.color}, #{self.year} #{self.model}."
+    puts "My car is a #{self.color}, #{self.year}, #{self.model}."
   end
 
 end

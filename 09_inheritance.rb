@@ -1,3 +1,5 @@
+##### QUESTIONS 1-6
+
 class Vehicle
   attr_accessor :current_speed, :color, :model, :year
 
@@ -119,3 +121,4 @@ puts Vehicle.ancestors
 
 # test age method that uses calc_age private method
 puts my_truck1.age
+

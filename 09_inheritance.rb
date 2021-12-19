@@ -1,6 +1,5 @@
 class Vehicle
-  attr_accessor :current_speed, :color, :model
-  attr_reader :year
+  attr_accessor :current_speed, :color, :model, :year
 
   @@number_of_vehicles = 0
 
@@ -47,6 +46,21 @@ class Vehicle
     self.color = color
     puts "Your new #{color} paint job looks great!"
   end
+
+  def age
+    puts "Your car is #{calc_age} years old."
+  end
+
+private
+  def calc_age
+   Time.now.year - self.year
+  end
+end
+
+module Loadable
+  def load_back
+    "Loading back"
+  end
 end
 
 
@@ -64,7 +78,10 @@ class Truck < Vehicle
     puts "My truck is a #{self.color}, #{self.year}, #{self.model}."
   end
   SIZE= "large"
+
+  include Loadable
 end
+
 
 my_car= Car.new(2010, "blue", "ford")
 
@@ -90,3 +107,15 @@ my_truck3= Truck.new(2010, "Ford Tundra", "white")
 puts my_truck1
 
 puts Vehicle.number_of_vehicles
+
+puts my_truck1.load_back
+
+# method look up for created classes
+puts Car.ancestors
+puts "------------"
+puts Truck.ancestors
+puts "------------"
+puts Vehicle.ancestors
+
+# test age method that uses calc_age private method
+puts my_truck1.age
